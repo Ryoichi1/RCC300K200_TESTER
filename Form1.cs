@@ -21,8 +21,8 @@ namespace Project1
     {
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
         // Infomation data of [RCC300K_AT01]
-        private string info_ver = "6.20";
-        private string info_date = "2016/07/26";
+        private string info_ver = "6.30";
+        private string info_date = "2017/03/10";
         //
         //  Version     Update
         //  1.00        2015/10/02      新規作成
@@ -38,6 +38,8 @@ namespace Project1
         //  6.10        2016/06/21      AFD 125KΩの範囲変更、読込ﾃﾞｰﾀを保存(5個)。
         //  6.11        2016/06/21      ﾌﾟﾛｾｽﾊﾞｰを追加。
         //  6.20        2016/07/26      電圧の測定を安定してからに変更。
+        //  6.30        2017/03/10      アプリCPU FW変更 k_1.60.08.mot → k_1.61.0.mot
+
 
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
@@ -1002,7 +1004,7 @@ namespace Project1
             {
                 ret = WriteAppCPU(@"C:\Program Files\Renesas\FDT4.09\FDT.exe",
                                     @"/DISCRETESTARTUP ""SimpleInterfaceMode /r""",
-                                        @"C:\RCC300\FW\K\AppCPU\k_1.60.08.mot",
+                                        @"C:\RCC300\FW\K\AppCPU\k_1.61.0.mot",
                                         ref check_sum);
             }
             if (ret == 0)
@@ -6844,7 +6846,7 @@ namespace Project1
                     PrintLogData("    F/W書込 ");
                     ret = WriteAppCPU(@"C:\Program Files\Renesas\FDT4.09\FDT.exe",
                                     @"/DISCRETESTARTUP ""SimpleInterfaceMode /r""",
-                                        @"C:\RCC300\FW\K\AppCPU\k_1.60.08.mot",
+                                        @"C:\RCC300\FW\K\AppCPU\k_1.61.0.mot",
                                         ref check_sum);
                     if (ret != 0)
                     {
