@@ -640,12 +640,13 @@ namespace Project1
                         // ｼﾘｱﾙNoのｲﾝｸﾘﾒﾝﾄ
                         if (txtSerialNo.Text != "SA000")
                         {
-                            txtSerialNo.Text = txtSerialNo.Text.Substring(0, 2) +
-                            (Convert.ToInt32(txtSerialNo.Text.Substring(2), 10) + 1).ToString("D3");
+                            var currentSerial = Int32.Parse(txtSerialNo.Text);
+                            var nextSerial = (currentSerial + 1).ToString("D5");
+                            txtSerialNo.Text = nextSerial;
 
                             StreamWriter srInf8 = new StreamWriter("C:\\RCC300\\FC\\\\SerialNo.dat",
                                                     false, Encoding.GetEncoding("shift_jis"));
-                            srInf8.WriteLine(txtSerialNo.Text);
+                            srInf8.WriteLine(nextSerial);
                             srInf8.Close();
                         }
                     }
