@@ -21,8 +21,8 @@ namespace Project1
     {
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
         // Infomation data of [RCC300K_AT01]
-        private string info_ver = "6.40";
-        private string info_date = "2017/03/16";
+        private string info_ver = "6.50";
+        private string info_date = "2017/08/21";
         //
         //  Version     Update
         //  1.00        2015/10/02      新規作成
@@ -40,6 +40,7 @@ namespace Project1
         //  6.20        2016/07/26      電圧の測定を安定してからに変更。
         //  6.30        2017/03/10      アプリCPU FW変更 k_1.60.08.mot → k_1.61.0.mot
         //  6.40        2017/03/16      シリアルナンバーが6桁になる不具合を修正
+        //  6.50        2017/08/21      アプリCPU FW変更 k_1.61.0.mot → k_2.0.1.mot
 
 
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -1006,7 +1007,7 @@ namespace Project1
             {
                 ret = WriteAppCPU(@"C:\Program Files\Renesas\FDT4.09\FDT.exe",
                                     @"/DISCRETESTARTUP ""SimpleInterfaceMode /r""",
-                                        @"C:\RCC300\FW\K\AppCPU\k_1.61.0.mot",
+                                        @"C:\RCC300\FW\K\AppCPU\k_2.0.1.mot",
                                         ref check_sum);
             }
             if (ret == 0)
@@ -6848,7 +6849,7 @@ namespace Project1
                     PrintLogData("    F/W書込 ");
                     ret = WriteAppCPU(@"C:\Program Files\Renesas\FDT4.09\FDT.exe",
                                     @"/DISCRETESTARTUP ""SimpleInterfaceMode /r""",
-                                        @"C:\RCC300\FW\K\AppCPU\k_1.61.0.mot",
+                                        @"C:\RCC300\FW\K\AppCPU\k_2.0.1.mot",
                                         ref check_sum);
                     if (ret != 0)
                     {
